@@ -17,9 +17,26 @@
 
             do
             {
+                string cabecaDoBoneco = quantidadeErros >= 1 ? " o " : " ";
+                string tronco = quantidadeErros >= 2 ? "x" : " ";
+                string troncoBaixo = quantidadeErros >= 2 ? " x " : " ";
+                string bracoEsquerdo = quantidadeErros >= 3 ? "/" : " ";
+                string bracoDireito = quantidadeErros >= 4 ? @"\" : " ";
+                string pernas = quantidadeErros >= 5 ? "/ \\" : " ";
+
                 Console.Clear();
                 Console.WriteLine("----------------------------------------------");
                 Console.WriteLine("Jogo da Forca");
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine(" ___________        ");
+                Console.WriteLine(" |/        |        ");
+                Console.WriteLine(" |        {0}       ", cabecaDoBoneco);
+                Console.WriteLine(" |        {0}{1}{2} ", bracoEsquerdo, tronco, bracoDireito);
+                Console.WriteLine(" |        {0}       ", troncoBaixo);
+                Console.WriteLine(" |        {0}       ", pernas);
+                Console.WriteLine(" |                  ");
+                Console.WriteLine(" |                  ");
+                Console.WriteLine("_|____              ");
                 Console.WriteLine("----------------------------------------------");
                 Console.WriteLine("Erros do jogador: " + quantidadeErros);
                 Console.WriteLine("----------------------------------------------");
@@ -27,7 +44,7 @@
                 Console.WriteLine("----------------------------------------------");
 
                 Console.Write("Digite uma letra: ");
-                char chute = Console.ReadLine().ToUpper()[0];
+                char chute = Console.ReadLine()!.ToUpper()[0];
 
                 bool letraFoiEncontrada = false;
 
@@ -62,9 +79,10 @@
                     Console.WriteLine("Que azar! Tente novamente!");
                     Console.WriteLine("----------------------------------------------");
                 }
-            } while (jogadorEnforcou == false && jogadorAcertou == false);
 
-            Console.ReadLine();
+                Console.ReadLine();
+
+            } while (jogadorEnforcou == false && jogadorAcertou == false);
         }
     }
 }
