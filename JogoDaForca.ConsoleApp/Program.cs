@@ -4,7 +4,44 @@
     {
         static void Main(string[] args)
         {
-            string palavraEscolhida = "MELANCIA";
+            string[] palavras = {
+                "ABACATE",
+                "ABACAXI",
+                "ACEROLA",
+                "ACAI",
+                "ARACA",
+                "ABACATE",
+                "BACABA",
+                "BACURI",
+                "BANANA",
+                "CAJA",
+                "CAJU",
+                "CARAMBOLA",
+                "CUPUACU",
+                "GRAVIOLA",
+                "GOIABA",
+                "JABUTICABA",
+                "JENIPAPO",
+                "MACA",
+                "MANGABA",
+                "MANGA",
+                "MARACUJA",
+                "MURICI",
+                "PEQUI",
+                "PITANGA",
+                "PITAYA",
+                "SAPOTI",
+                "TANGERINA",
+                "UMBU",
+                "UVA",
+                "UVAIA"
+            };
+
+            Random random = new Random();
+
+            int indiceEscolhido = random.Next(palavras.Length);
+
+            string palavraEscolhida = palavras[indiceEscolhido];
 
             char[] letrasEncontradas = new char[palavraEscolhida.Length];
 
